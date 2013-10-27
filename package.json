@@ -1,0 +1,42 @@
+{
+  "name": "query-parser.jsx",
+  "version": "0.1.0",
+  "description": "Google-ish query string parser for JSX/JS/CommonJS/AMD",
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt test",
+    "doc": "grunt doc"
+  },
+  "engines" : { "node" : ">=0.8.0" },
+  "keywords": [
+    "jsx",
+    "altjs",
+    "lib",
+    "js",
+    "amd",
+    "commonjs",
+    "nodejs",
+    "browser"
+  ],
+  "main": "./lib/query-parser.jsx",
+  "homepage": "https://github.com/shibukawa/query-parser.jsx",
+  "bugs": {
+    "url": "https://github.com/shibukawa/query-parser.jsx/issues"
+  },
+  "directories": {
+    "doc": "./doc",
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shibukawa/query-parser.jsx.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.1",
+    "grunt-jsx": ">=0.1.5"
+  },
+  "author": "shibukawa",
+  "license": "MIT"
+}
