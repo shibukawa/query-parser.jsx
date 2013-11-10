@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     sampleDir: "samples",
-    libDir: "lib",
+    libDir: "src",
     destDir: "dest",
     testDir: "test",
     docDir: "doc",
@@ -29,9 +29,9 @@ module.exports = function(grunt) {
       },
 
       commonjs: {
-        src: ['lib/query-parser.jsx'],
+        src: ['src/query-parser.jsx'],
         output_rule: {
-            regexp: /lib\/(.+)\.jsx/,
+            regexp: /src\/(.+)\.jsx/,
             replace: 'dest\/$1.common.js'
         },
         add_search_path: ['<%= libDir %>'],
@@ -41,9 +41,9 @@ module.exports = function(grunt) {
       },
 
       amd: {
-        src: ['lib/query-parser.jsx'],
+        src: ['src/query-parser.jsx'],
         output_rule: {
-            regexp: /lib\/(.+)\.jsx/,
+            regexp: /src\/(.+)\.jsx/,
             replace: 'dest\/$1.amd.js'
         },
         add_search_path: ['<%= libDir %>'],
@@ -53,9 +53,9 @@ module.exports = function(grunt) {
       },
 
       closure: {
-        src: ['lib/query-parser.jsx'],
+        src: ['src/query-parser.jsx'],
         output_rule: {
-            regexp: /lib\/(.+)\.jsx/,
+            regexp: /src\/(.+)\.jsx/,
             replace: 'dest\/$1.closure.js'
         },
         add_search_path: ['<%= libDir %>'],
@@ -65,9 +65,9 @@ module.exports = function(grunt) {
       },
 
       global: {
-        src: ['lib/query-parser.jsx'],
+        src: ['src/query-parser.jsx'],
         output_rule: {
-            regexp: /lib\/(.+)\.jsx/,
+            regexp: /src\/(.+)\.jsx/,
             replace: 'dest\/$1.global.js'
         },
         add_search_path: ['<%= libDir %>'],
@@ -77,9 +77,9 @@ module.exports = function(grunt) {
       },
 
       standard: {
-        src: ['lib/query-parser.jsx'],
+        src: ['src/query-parser.jsx'],
         output_rule: {
-            regexp: /lib\/(.+)\.jsx/,
+            regexp: /src\/(.+)\.jsx/,
             replace: 'dest\/$1.js'
         },
         add_search_path: ['<%= libDir %>'],
@@ -116,6 +116,7 @@ module.exports = function(grunt) {
     'jsx:standard',
     'jsx:global'
   ]);
+
   grunt.registerTask('test', ['jsx:test']);
   grunt.registerTask('doc', ['jsx:doc']);
 };

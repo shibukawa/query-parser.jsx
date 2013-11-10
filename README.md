@@ -1,6 +1,8 @@
 query-parser.jsx
 ===========================================
 
+[![Build Status](https://travis-ci.org/shibukawa/query-parser.jsx.png)](https://travis-ci.org/shibukawa/query-parser.jsx)
+
 Synopsis
 ---------------
 
@@ -118,10 +120,55 @@ Installation
 $ npm install query-parser.jsx
 ```
 
+If you want to use this library from other JSX project, install like the following:
+
+```sh
+$ npm install query-parser.jsx --save-dev
+```
+
+or add like these lines to your parent project's `package.json`:
+
+```js
+   devDependencies: {
+       "query-parser.jsx": "~0.3.0"
+   },
+   peerDepenencies: {
+       "query-parser.jsx": "~0.3.0"
+   }
+```
+
+And add `node_modules/query-parser.jsx/src` as a search path.
+You should add to `peerDepenencies` if your product is library.
+
 API Reference
 ------------------
 
-Write reference here!
+This module provides the following two classes:
+
+### class QueryListParser()
+
+It is good for prcessing command line parameters. `query()` method receives array of string.
+
+### class QueryStringParser()
+
+It is good for prcessing search query in text input. `query()` method receives string.
+
+#### QueryParser#parse(query) : void
+
+Parse query.
+
+#### QueryParser#queries : Query[]
+
+Parse result.
+
+### class Query
+
+It has query result. It has the following members:
+
+* `word : string`
+* `or : boolean`
+* `not : boolean`
+* `raw : boolean`
 
 Development
 -------------
